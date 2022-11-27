@@ -6,8 +6,6 @@ import styles from "./App.module.css";
 
 import "./global.css";
 
-import janeCooper from "./assets/jane-cooper.png";
-
 // author: { avatar_url: "", name: "", role: "" }
 // publishedAt: Date
 // content: String
@@ -16,7 +14,7 @@ const post = [
   {
     id: 1,
     author: {
-      avatarUrl: { janeCooper },
+      avatarUrl: './src/assets/jane-cooper.png',
       name: 'Jane Cooper',
       role: 'Dev Front-End'
     },
@@ -30,9 +28,9 @@ const post = [
   {
     id: 2,
     author: {
-      avatarUrl: 'https://github.com/mfaoficial.png',
-      name: 'Matheus Aquino',
-      role: 'BackEnd Developer'
+      avatarUrl: './src/assets/devon-lane.png',
+      name: 'Devon Lane',
+      role: 'Dev Front-End'
     },
     content: [
       { type: 'paragraph', content: 'Fala pessoal 👋' },
