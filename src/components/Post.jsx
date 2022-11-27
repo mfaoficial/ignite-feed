@@ -1,28 +1,22 @@
 import styles from "./Post.module.css";
 
 import janeCooper from "../assets/jane-cooper.png";
-import devonLane from "../assets/devon-lane.png";
-import jennyWilson from "../assets/jenny-wilson.png";
-import bessieCooper from "../assets/bessie-cooper.png";
+import { Comment } from "./Comment";
+import { Avatar } from "./Avatar";
 
 export function Post() {
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img src={janeCooper} />
+          <Avatar src={janeCooper} />
           <div className={styles.authorInfo}>
             <strong>Jane Cooper</strong>
             <span>Dev Front-End</span>
           </div>
         </div>
 
-        <time
-          title="26 de Novembro de 2022 as 20:32"
-          dateTime="2022-11-26 20:23:12"
-        >
-          Publicado a 1h
-        </time>
+        <time title="26 de Novembro de 2022 as 20:32" dateTime="2022-11-26 20:23:12">Publicado a 1h</time>
       </header>
 
       <div className={styles.content}>
@@ -54,8 +48,13 @@ export function Post() {
         <footer>
           <button type="submit">Publicar</button>
         </footer>
-
       </form>
+
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
     </article>
   );
 }
