@@ -4,11 +4,17 @@ import janeCooper from "../assets/jane-cooper.png";
 import devonLane from "../assets/devon-lane.png";
 import jennyWilson from "../assets/jenny-wilson.png";
 import bessieCooper from "../assets/bessie-cooper.png";
+
 import { ThumbsUp, Trash } from 'phosphor-react';
 import { Avatar } from './Avatar';
 import { useState } from 'react';
 
-export function Comment({ content, onDeleteComment }) {
+interface CommentProps {
+    content: string;
+    onDeleteComment: (comment: string) => void;
+}
+
+export function Comment({ content, onDeleteComment } : CommentProps) {
     const [likeCount, setLikeCount] = useState(0);
 
     function handleDeleteComment() {
@@ -23,7 +29,11 @@ export function Comment({ content, onDeleteComment }) {
 
     return (
         <div className={styles.comment}>
-            <Avatar hasBorder={false} src="https://github.com/mfaoficial.png" />
+            <Avatar
+                hasBorder={false}
+                src="https://github.com/mfaoficial.png"
+                alt=""
+            />
 
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
